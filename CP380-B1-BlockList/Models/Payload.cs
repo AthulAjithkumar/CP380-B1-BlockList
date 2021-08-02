@@ -1,4 +1,4 @@
-﻿
+
 namespace CP380_B1_BlockList.Models
 {
     public enum TransactionTypes
@@ -9,5 +9,9 @@ namespace CP380_B1_BlockList.Models
     public class Payload
     {
         // TODO
+        public string User;
+        public enum TransactionTypes { }
+        public string Item;
+        public int Amount;
     }
 }
