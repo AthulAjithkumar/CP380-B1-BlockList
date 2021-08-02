@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace CP380_B1_BlockList.Models
@@ -24,12 +24,22 @@ namespace CP380_B1_BlockList.Models
 
         public void AddBlock(Block block)
         {
-            // TODO
+            
+            var block = new Block(DateTime.Now, null, new List<Payload>());
+            block.Mine(Difficulty);
+            Chain.Add(block);
+
         }
 
         public bool IsValid()
         {
-            // TODO
+            var block = new Block(DateTime.Now, null, new List<Payload>());
+            block.Mine(Difficulty);
+            Chain.Add(block);
+            if (IsValid(block))
+            {
+                return true;
+            }  
 
             return false;
         }
